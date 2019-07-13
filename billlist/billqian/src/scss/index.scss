@@ -1,0 +1,195 @@
+/*
+ * @Author: yinyaoxuan 
+ * @Date: 2019-01-19 10:31:14 
+ * @Last Modified by: xiaoyuf
+ * @Last Modified time: 2019-01-19 16:49:27
+ */
+
+@import "_mixin";
+@import "common";
+@import "reset";
+.wrap {
+    width: 100%;
+    height: 100%;
+    @include box_flex;
+    @include direction(column);
+    header {
+        >span {
+            display: block;
+            padding: pxTorem(5px) pxTorem(10px);
+            font-size: pxTorem(14px);
+        }
+        .billBox {
+            width: 100%;
+            background: #98c8f0;
+            color: #fff;
+            margin-top: pxTorem(10px);
+            @include box_flex;
+            @include direction(column);
+            @include align;
+            padding-top: pxTorem(20px);
+            padding-bottom: pxTorem(5px);
+            .restMoney {
+                font-size: pxTorem(30px);
+                margin-bottom: pxTorem(10px);
+            }
+            .restRead {
+                height: pxTorem(20px);
+                line-height: pxTorem(20px);
+                border-radius: pxTorem(10px);
+                border: pxTorem(0.7px) solid #fff;
+                padding: 0 pxTorem(10px);
+                font-size: pxTorem(14px);
+            }
+            .lastBox {
+                width: 100%;
+                @include box_flex;
+                @include justify(space-around);
+                font-size: pxTorem(14px);
+                margin-top: pxTorem(20px);
+            }
+            .left {
+                @include box_flex;
+                @include direction(column);
+                @include align;
+            }
+            .right {
+                @extend .left;
+            }
+            .leftMoney {
+                font-size: pxTorem(16px);
+            }
+            .rightMoney {
+                @extend .leftMoney;
+            }
+            .income {
+                font-size: pxTorem(10px);
+                margin-top: pxTorem(5px);
+            }
+            .expend {
+                @extend .income;
+            }
+        }
+    }
+    main {
+        @include flex;
+        overflow: hidden;
+        width: 100%;
+        section {
+            width: 100%;
+            .list {
+                width: 100%;
+                .top {
+                    width: 100%;
+                    padding: pxTorem(5px) pxTorem(10px);
+                    @include box_flex;
+                    @include justify(space-between);
+                    background: #f9fafc;
+                    color: #999;
+                    .tRight {
+                        @include box_flex;
+                        @include align;
+                        .leftMoney {
+                            margin-top: pxTorem(2px);
+                        }
+                        .rightRead {
+                            margin-left: pxTorem(5px);
+                        }
+                        .rightMoney {
+                            margin-top: pxTorem(2px);
+                        }
+                    }
+                }
+                .content {
+                    dl {
+                        padding: 0 pxTorem(10px);
+                        @include box_flex;
+                        @include justify(space-between);
+                        dt {
+                            height: pxTorem(40px);
+                            @include box_flex;
+                            @include justify;
+                            @include align;
+                            p {
+                                width: pxTorem(40px);
+                                height: pxTorem(40px);
+                                background: #eee;
+                                border-radius: 100%;
+                                margin-top: pxTorem(15px);
+                                background: #32b89f;
+                                line-height: pxTorem(40px);
+                                text-align: center;
+                                .icon {
+                                    font-size: pxTorem(20px);
+                                    color: #fff;
+                                }
+                            }
+                        }
+                        dd {
+                            @include flex;
+                            @include box_flex;
+                            @include justify(space-between);
+                            @include align;
+                            margin-left: pxTorem(10px);
+                            border-bottom: 1px solid #ccc;
+                            padding: pxTorem(15px) 0;
+                            .name {
+                                color: #999;
+                                font-size: pxTorem(14px);
+                            }
+                            .money {
+                                font-weight: 600;
+                                font-size: pxTorem(20px);
+                                color: #32b89f;
+                            }
+                            .pay {
+                                font-weight: 600;
+                                font-size: pxTorem(20px);
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        position: relative;
+        .addBtn {
+            position: absolute;
+            left: 50%;
+            top: pxTorem(-40px);
+            margin-left: -40px;
+            font-size: pxTorem(40px);
+            color: #fff;
+            width: pxTorem(40px);
+            height: pxTorem(40px);
+            text-align: center;
+            line-height: pxTorem(40px);
+            border-radius: 100%;
+            background: #ff4a1f;
+        }
+        .normal {
+            @include box_flex;
+            dl {
+                @include flex;
+                padding: pxTorem(5px);
+                @include box_flex;
+                @include direction(column);
+                @include justify;
+                @include align;
+                dt {
+                    .icon {
+                        font-size: pxTorem(18px);
+                        font-weight: 600;
+                        color: #666;
+                    }
+                }
+                dd {
+                    color: #666;
+                    margin-top: pxTorem(5px);
+                }
+            }
+        }
+    }
+}
